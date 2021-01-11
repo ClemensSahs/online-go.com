@@ -33,6 +33,9 @@ import {notification_manager} from "Notifications";
 import {one_bot, bot_count, bots_list} from "bots";
 import {openForkModal} from "./ForkModal";
 
+
+import AdditionalSettings from "./components/AdditionalSettings";
+
 declare let swal;
 
 type ChallengeModes = "open" | "computer" | "player" | "demo";
@@ -674,101 +677,22 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
 
     // board size and 'Ranked' checkbox
     additionalSettings = () => {
-        let mode = this.props.mode;
-        let conf = this.state.conf;
-        let enable_custom_board_sizes = mode === 'demo' || !this.state.challenge.game.ranked;
+        let additionalSettingsProps = {
+          challenge: this.state.challenge,
+          conf: this.state.conf,
+          forking_game: this.state.forking_game,
+          mode: this.props.mode,
+          ranked: this.state.challenge.game.ranked,
+          rules: this.state.demo.rules,
+          update_demo_rules: this.update_demo_rules,
+          update_board_size: this.update_board_size,
+          update_board_width: this.update_board_width,
+          update_board_height: this.update_board_height,
+          update_ranked: this.update_ranked,
+          update_aga_ranked: this.update_aga_ranked,
+        };
 
-        return <div id="challenge-basic-settings" className="right-pane pane form-horizontal" role="form">
-            {!this.state.forking_game && mode !== "demo" &&
-                <div>
-                    <div className="form-group">
-                        <label className="control-label" htmlFor="challenge-ranked">{_("Ranked")}</label>
-                        <div className="controls">
-                            <div className="checkbox">
-                                <input type="checkbox"
-                                    id="challenge-ranked"
-                                    disabled={this.state.challenge.game.private}
-                                    checked={this.state.challenge.game.ranked} onChange={this.update_ranked}/>
-                            </div>
-                        </div>
-                    </div>
-
-                    {data.get("config.aga_rankings_enabled", null) &&
-                        <div className="form-group">
-                            <label className="control-label" htmlFor="challenge-aga-ranked">{_("AGA Ranked")}</label>
-                            <div className="controls">
-                                <div className="checkbox">
-                                    <input type="checkbox"
-                                        id="challenge-aga-ranked"
-                                        disabled={this.state.challenge.game.private}
-                                        checked={this.state.challenge.aga_ranked} onChange={this.update_aga_ranked}/>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            }
-            {(mode === "demo" || null) &&
-                <div>
-                    <div className="form-group" id="challenge.game.rules-group">
-                        <label className="control-label" htmlFor="rules">{_("Rules")}</label>
-                        <div className="controls">
-                            <div className="checkbox">
-                                <select value={this.state.demo.rules} onChange={this.update_demo_rules} className="challenge-dropdown form-control">
-                                    <option value="aga">{_("AGA")}</option>
-                                    <option value="chinese">{_("Chinese")}</option>
-                                    <option value="ing">{_("Ing SST")}</option>
-                                    <option value="japanese">{_("Japanese")}</option>
-                                    <option value="korean">{_("Korean")}</option>
-                                    <option value="nz">{_("New Zealand")}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-            {!this.state.forking_game &&
-                <div className="form-group" id="challenge-board-size-group">
-                    <label className="control-label" htmlFor="challenge-board-size">{_("Board Size")}</label>
-                    <div className="controls">
-                        <div className="checkbox">
-                            <select id="challenge-board-size" value={this.state.conf.selected_board_size} onChange={this.update_board_size} className="challenge-dropdown form-control">
-                                <optgroup label={_("Normal Sizes")}>
-                                    <option value="19x19">19x19</option>
-                                    <option value="13x13">13x13</option>
-                                    <option value="9x9">9x9</option>
-                                </optgroup>
-                                <optgroup label={_("Extreme Sizes")}>
-                                    <option disabled={!enable_custom_board_sizes} value="25x25">25x25</option>
-                                    <option disabled={!enable_custom_board_sizes} value="21x21">21x21</option>
-                                    <option disabled={!enable_custom_board_sizes} value="5x5">5x5</option>
-                                </optgroup>
-                                <optgroup label={_("Non-Square")}>
-                                    <option disabled={!enable_custom_board_sizes} value="19x9">19x9</option>
-                                    <option disabled={!enable_custom_board_sizes} value="5x13">5x13</option>
-                                </optgroup>
-                                <optgroup label={_("Custom")}>
-                                    <option disabled={!enable_custom_board_sizes} value="custom">{_("Custom Size")}</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            }
-
-            {!this.state.forking_game && (conf.selected_board_size === "custom" || null) &&
-                <div className="form-group">
-                    <label className="control-label" htmlFor="challenge-board-size-custom"></label>
-                    <div className="controls">
-                        <div className="checkbox">
-                            <input type="number" value={this.state.challenge.game.width} onChange={this.update_board_width} id="challenge-goban-width" className="form-control" style={{width: "3em"}} min="1" max="25"/>
-                            x
-                            <input type="number" value={this.state.challenge.game.height} onChange={this.update_board_height} id="challenge-goban-height" className="form-control" style={{width: "3em"}} min="1" max="25"/>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>;
+        return <AdditionalSettings {...additionalSettingsProps} />;
     }
 
     advancedDemoSettings = () => {

@@ -20,6 +20,9 @@
     "defaults"
   ],
   "devDependencies": {
+    "@testing-library/dom": "^7.29.2",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.3",
     "@types/jest": "^26.0.15",
     "autoprefixer": "^10.0.2",
     "body-parser": "^1.16.1",
