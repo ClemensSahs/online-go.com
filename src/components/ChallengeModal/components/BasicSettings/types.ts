@@ -1,10 +1,9 @@
-import * as React from 'react';
 
 import {
   OnChangeHandlerInput,
   OnChangeHandlerSelect,
   ChallengeModes,
-} from '../types';
+} from '../../types';
 
 export interface BasicSettingsGamePrivateProps {
   dataTestid: string
