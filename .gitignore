@@ -9,6 +9,7 @@ stats.json
 src/components/base
 .vscode
 todo
+test-coverage
 yarn-error.log
 deployment-staging-area
 Makefile.passwords
