@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as data from "data";
 
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import AdditionalSettingsNormal from './AdditionalSettingsNormal';
@@ -37,6 +37,7 @@ const getBaseProps = () => {
       selected_board_size: '19x19'
     },
     forking_game: '',
+    withAgaRanking: false,
     mode: ChallengeModes.OPEN,
     ranked: false,
     update_demo_rules: (ev) => console.log(),
@@ -66,12 +67,7 @@ describe('ChallengeModes additional settings normal', () => {
 
 
   test('render additional settings with aga ranking', () => {
-    (data.get as unknown as jest.Mock).mockImplementation((x: string, defaultValue?: any): any => {
-      if (x === 'config.aga_rankings_enabled') {
-        return true;
-      }
-      return defaultValue;
-    });
+    mockedProps.withAgaRanking = true;
 
     render(<AdditionalSettingsNormal {...mockedProps} />);
 

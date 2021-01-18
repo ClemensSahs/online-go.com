@@ -11,20 +11,11 @@ import {
   AdditionalSettingsHeaderAgaRanked
 } from './AdditionalSettingsHeaderRanked';
 
-type ChallengeModes = "open" | "computer" | "player" | "demo";
-interface AdditionalSettingsNormalProps {
-  challenge
-  conf
-  forking_game: boolean
-  mode: ChallengeModes
-  ranked: boolean
-  update_demo_rules: Function
-  update_board_size: Function
-  update_board_width: Function
-  update_board_height: Function
-  update_ranked: Function
-  update_aga_ranked: Function
-}
+
+import {
+  AdditionalSettingsNormalProps,
+  ChallengeModes
+} from '../../types';
 
 export const AdditionalSettingsNormal = ({
   mode,
@@ -37,9 +28,10 @@ export const AdditionalSettingsNormal = ({
   update_board_size,
   update_board_width,
   update_board_height,
+  withAgaRanking
 }: AdditionalSettingsNormalProps) => {
 
-  let enable_custom_board_sizes = mode === 'demo' || !ranked;
+  let enable_custom_board_sizes = mode === ChallengeModes.DEMO || !ranked;
 
   if (forking_game) {
     return null;
@@ -52,7 +44,7 @@ export const AdditionalSettingsNormal = ({
               challenge={challenge}
               update_ranked={update_ranked}
             />
-            {data.get("config.aga_rankings_enabled", null) &&
+            {withAgaRanking &&
               <AdditionalSettingsHeaderAgaRanked
                 challenge={challenge}
                 update_aga_ranked={update_aga_ranked}

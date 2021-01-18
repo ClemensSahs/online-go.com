@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`componentSanityChecks for BasicSettings.as computer matches the snapshot 1`] = `
+<div
+  className="left-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="engine"
+    >
+      Computer opponent
+    </label>
+    <div
+      className="controls"
+    >
+      <select
+        data-testid="challenge-ai"
+        id="challenge-ai"
+        onChange={[MockFunction]}
+        required={true}
+        value={12}
+      >
+        <option
+          value="test-bot-1"
+        >
+          test-bot-1 (10k)
+        </option>
+        <option
+          value="test-bot-2"
+        >
+          test-bot-2 (9k)
+        </option>
+        <option
+          value="test-bot-3"
+        >
+          test-bot-3 (8k)
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-private"
+    >
+      Private
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          checked={false}
+          data-testid="private-input"
+          id="challenge-private"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`componentSanityChecks for BasicSettings.as demo matches the snapshot 1`] = `
+<div
+  className="left-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge_game_name"
+    >
+      Game Name
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          className="form-control"
+          id="challenge-game-name"
+          onChange={[MockFunction]}
+          placeholder="Game Name"
+          type="text"
+          value="test game"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-private"
+    >
+      Private
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          checked={false}
+          data-testid="private-input-demo"
+          id="challenge-private"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`componentSanityChecks for BasicSettings.as player matches the snapshot 1`] = `
+<div
+  className="left-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge_game_name"
+    >
+      Game Name
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          className="form-control"
+          id="challenge-game-name"
+          onChange={[MockFunction]}
+          placeholder="Game Name"
+          type="text"
+          value="test game"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-private"
+    >
+      Private
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          checked={false}
+          data-testid="private-input"
+          id="challenge-private"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`componentSanityChecks for BasicSettings.normal matches the snapshot 1`] = `
+<div
+  className="left-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge_game_name"
+    >
+      Game Name
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          className="form-control"
+          id="challenge-game-name"
+          onChange={[MockFunction]}
+          placeholder="Game Name"
+          type="text"
+          value="test game"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-private"
+    >
+      Private
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <input
+          checked={false}
+          data-testid="private-input"
+          id="challenge-private"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

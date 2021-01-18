@@ -11,6 +11,7 @@
         "lib": ["es2015", "dom"],
         "baseUrl": ".",
         "paths": {
+          "@OGS/tests/*": ["src/tests/*"],
             "*": [
                 "*",
                 "src/lib/*",
@@ -22,11 +23,11 @@
             ],
             "requests": [
                 "src/lib/requests"
-            ]
+            ],
         },
 
         "forceConsistentCasingInFileNames": true,
-        
+
         "noImplicitAny": false,
         "noImplicitReturns": false,
         "noImplicitThis": false,

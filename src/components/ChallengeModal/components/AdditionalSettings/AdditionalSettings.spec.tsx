@@ -39,6 +39,7 @@ const getBaseProps = () => {
     forking_game: '',
     mode: ChallengeModes.OPEN,
     ranked: false,
+    withAgaRanking: false,
     update_demo_rules: (ev) => console.log(),
     update_board_size: (ev) => console.log(),
     update_board_width: (ev) => console.log(),

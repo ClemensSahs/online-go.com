@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`componentSanityChecks for BasicSettings.as demo matches the snapshot 1`] = `
+<div
+  className="right-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+    id="challenge.game.rules-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="rules"
+    >
+      Rules
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <select
+          className="challenge-dropdown form-control"
+          onChange={[Function]}
+        >
+          <option
+            value="aga"
+          >
+            AGA
+          </option>
+          <option
+            value="chinese"
+          >
+            Chinese
+          </option>
+          <option
+            value="ing"
+          >
+            Ing SST
+          </option>
+          <option
+            value="japanese"
+          >
+            Japanese
+          </option>
+          <option
+            value="korean"
+          >
+            Korean
+          </option>
+          <option
+            value="nz"
+          >
+            New Zealand
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+    id="challenge-board-size-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-board-size"
+    >
+      Board Size
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <select
+          className="challenge-dropdown form-control"
+          id="challenge-board-size"
+          onChange={[Function]}
+          value="19x19"
+        >
+          <optgroup
+            label="Normal Sizes"
+          >
+            <option
+              value="19x19"
+            >
+              19x19
+            </option>
+            <option
+              value="13x13"
+            >
+              13x13
+            </option>
+            <option
+              value="9x9"
+            >
+              9x9
+            </option>
+          </optgroup>
+          <optgroup
+            label="Extreme Sizes"
+          >
+            <option
+              disabled={false}
+              value="25x25"
+            >
+              25x25
+            </option>
+            <option
+              disabled={false}
+              value="21x21"
+            >
+              21x21
+            </option>
+            <option
+              disabled={false}
+              value="5x5"
+            >
+              5x5
+            </option>
+          </optgroup>
+          <optgroup
+            label="Non-Square"
+          >
+            <option
+              disabled={false}
+              value="19x9"
+            >
+              19x9
+            </option>
+            <option
+              disabled={false}
+              value="5x13"
+            >
+              5x13
+            </option>
+          </optgroup>
+          <optgroup
+            label="Custom"
+          >
+            <option
+              disabled={false}
+              value="custom"
+            >
+              Custom Size
+            </option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`componentSanityChecks for BasicSettings.normal matches the snapshot 1`] = `
+<div
+  className="right-pane pane form-horizontal"
+  id="challenge-basic-settings"
+  role="form"
+>
+  <div
+    className="form-group"
+    id="challenge.game.rules-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="rules"
+    >
+      Rules
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <select
+          className="challenge-dropdown form-control"
+          onChange={[Function]}
+        >
+          <option
+            value="aga"
+          >
+            AGA
+          </option>
+          <option
+            value="chinese"
+          >
+            Chinese
+          </option>
+          <option
+            value="ing"
+          >
+            Ing SST
+          </option>
+          <option
+            value="japanese"
+          >
+            Japanese
+          </option>
+          <option
+            value="korean"
+          >
+            Korean
+          </option>
+          <option
+            value="nz"
+          >
+            New Zealand
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+    id="challenge-board-size-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-board-size"
+    >
+      Board Size
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <select
+          className="challenge-dropdown form-control"
+          id="challenge-board-size"
+          onChange={[Function]}
+          value="19x19"
+        >
+          <optgroup
+            label="Normal Sizes"
+          >
+            <option
+              value="19x19"
+            >
+              19x19
+            </option>
+            <option
+              value="13x13"
+            >
+              13x13
+            </option>
+            <option
+              value="9x9"
+            >
+              9x9
+            </option>
+          </optgroup>
+          <optgroup
+            label="Extreme Sizes"
+          >
+            <option
+              disabled={false}
+              value="25x25"
+            >
+              25x25
+            </option>
+            <option
+              disabled={false}
+              value="21x21"
+            >
+              21x21
+            </option>
+            <option
+              disabled={false}
+              value="5x5"
+            >
+              5x5
+            </option>
+          </optgroup>
+          <optgroup
+            label="Non-Square"
+          >
+            <option
+              disabled={false}
+              value="19x9"
+            >
+              19x9
+            </option>
+            <option
+              disabled={false}
+              value="5x13"
+            >
+              5x13
+            </option>
+          </optgroup>
+          <optgroup
+            label="Custom"
+          >
+            <option
+              disabled={false}
+              value="custom"
+            >
+              Custom Size
+            </option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+`;

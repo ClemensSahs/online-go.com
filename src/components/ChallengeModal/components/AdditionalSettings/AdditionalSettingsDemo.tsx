@@ -2,24 +2,15 @@ import * as React from 'react';
 import {
   _
 } from "translate";
-import * as data from "data";
 
 import AdditionalSettingsHeaderDemo from './AdditionalSettingsHeaderDemo';
 import AdditionalSettingsBoardSize from './AdditionalSettingsBoardSize';
 
-type ChallengeModes = "open" | "computer" | "player" | "demo";
-interface AdditionalSettingsProps {
-  challenge
-  conf
-  forking_game: boolean
-  mode: ChallengeModes
-  ranked: boolean
-  rules
-  update_demo_rules: Function
-  update_board_size: Function
-  update_board_width: Function
-  update_board_height: Function
-}
+import {
+  ChallengeModes,
+  AdditionalSettingsDemoProps
+} from '../../types';
+
 
 const AdditionalSettingsDemo = ({
   challenge,
@@ -32,9 +23,9 @@ const AdditionalSettingsDemo = ({
   update_board_size,
   update_board_width,
   update_board_height,
-}: AdditionalSettingsProps) => {
+}: AdditionalSettingsDemoProps) => {
 
-  let enable_custom_board_sizes = mode === 'demo' || !ranked;
+  let enable_custom_board_sizes = mode === ChallengeModes.DEMO || !ranked;
 
   return (
     <div id="challenge-basic-settings" className="right-pane pane form-horizontal" role="form">

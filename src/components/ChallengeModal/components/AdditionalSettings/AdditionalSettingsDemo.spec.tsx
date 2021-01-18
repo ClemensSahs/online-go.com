@@ -7,6 +7,11 @@ import '@testing-library/jest-dom/extend-expect'
 
 import AdditionalSettingsDemo from './AdditionalSettingsDemo';
 import {
+  componentSanityChecks,
+  runPropsMatrix,
+  testCheckBox,
+} from 'testUtility';
+import {
   ChallengeModes
 } from '../../types';
 
@@ -25,8 +30,8 @@ jest.mock('translate', () => ({
     _: jest.fn(x => x),
 }));
 
-const getBaseProps = () => {
-  return {
+const getBaseProps = (customProps = {}) => {
+  const baseProps = {
     challenge: {
       game: {
         width: 19,
@@ -46,7 +51,21 @@ const getBaseProps = () => {
     update_ranked: (ev) => console.log(),
     update_aga_ranked: (ev) => console.log(),
   };
+  return {
+    ...baseProps,
+    ...customProps
+  };
 }
+
+
+runPropsMatrix([
+  ['normal', getBaseProps()],
+  ['as demo', getBaseProps({
+    mode: ChallengeModes.DEMO
+  })],
+],(labelSubfix: string, props) => {
+  componentSanityChecks(`BasicSettings.${labelSubfix}`, <AdditionalSettingsDemo {...props} />);
+});
 
 describe('ChallengeModes additional settings demo', () => {
 
@@ -58,8 +77,6 @@ describe('ChallengeModes additional settings demo', () => {
 
   test('render additional settings as demo', () => {
     render(<AdditionalSettingsDemo {...mockedProps} />);
-
-    console.log(screen.queryByLabelText('Rules'));
 
     waitFor(() => expect(screen.queryByLabelText('Rules')).toBeTruthy());
   });

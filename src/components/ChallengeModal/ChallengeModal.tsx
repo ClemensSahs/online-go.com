@@ -34,6 +34,7 @@ import {one_bot, bot_count, bots_list} from "bots";
 import {openForkModal} from "./ForkModal";
 
 
+import BasicSettings from "./components/BasicSettings";
 import AdditionalSettings from "./components/AdditionalSettings";
 
 declare let swal;
@@ -630,49 +631,38 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
 
     // game name and privacy
     basicSettings = () => {
-        let mode = this.props.mode;
-        return <div id="challenge-basic-settings" className="left-pane pane form-horizontal" role="form">
-            {(mode === "computer" || null) &&
-                <div className="form-group">
-                    <label className="control-label" htmlFor="engine">{pgettext("Computer opponent", "AI Player")}</label>
-                    <div className="controls">
-                    <select id="challenge-ai" value={this.state.conf.bot_id} onChange={this.update_conf_bot_id} required={true}>
-                        {bots_list().map((bot, idx) => (<option key={idx} value={bot.id}>{bot.username} ({rankString(getUserRating(bot).rank)})</option>) )}
-                    </select>
-                    </div>
-                </div>
-            }
-            {(mode !== "computer" || null) &&
-                <div className="form-group">
-                    <label className="control-label" htmlFor="challenge_game_name">{_("Game Name")}</label>
-                    <div className="controls">
-                        <div className="checkbox">
-                            <input type="text" value={this.state.challenge.game.name} onChange={this.update_challenge_game_name} className="form-control" id="challenge-game-name" placeholder={_("Game Name")}/>
-                        </div>
-                    </div>
-                </div>
-            }
-            <div className="form-group">
-                <label className="control-label" htmlFor="challenge-private">
-                    {_("Private")}
-                </label>
-                <div className="controls">
-                    {(mode !== "demo" || null) && <div className="checkbox">
-                        <input type="checkbox"
-                        id="challenge-private"
-                        checked={this.state.challenge.game.private} onChange={this.update_private}/>
-                    </div>
-                    }
-                    {(mode === "demo" || null) && <div className="checkbox">
-                        <input type="checkbox"
-                        id="challenge-private"
-                        checked={this.state.demo.private} onChange={this.update_demo_private}/>
-                    </div>
-                    }
+        let basicSettingsProps = {
+          challenge: this.state.challenge,
+          conf: this.state.conf,
+          forking_game: this.state.forking_game,
+          mode: this.props.mode,
+          ranked: this.state.challenge.game.ranked,
+          rules: this.state.demo.rules,
 
-                </div>
-            </div>
-        </div>;
+
+          gameName: this.state.challenge.game.name,
+          gameDemoPrivate:this.state.demo.private,
+          gamePrivate: this.state.challenge.game.private,
+          onChangePrivate: this.update_private,
+          onChangeDemoPrivate: this.update_demo_private,
+          onChangeChallengeGameName: this.update_challenge_game_name,
+          onChangeConfBotId: this.update_conf_bot_id,
+        };
+
+        // reason: move side effect up to parent to ceap child component as dump as possible
+        // TODO: move side effect in to a customHook
+        if (this.props.mode = ChallengeModes.COMPUTER) {
+          basicSettingsProps.botId = this.state.conf.bot_id;
+          basicSettingsProps.botList = bots_list().map((bot, idx) => {
+            const optionString = `${bot.username} (${bot.rank})`;
+            return {
+              ...bot,
+              rankString: rankString(getUserRating(bot).rank),
+            };
+          });
+        }
+
+        return <BasicSettings {...basicSettingsProps} />;
     }
 
     // board size and 'Ranked' checkbox
