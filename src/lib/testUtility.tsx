@@ -8,9 +8,14 @@ const renderer = require('react-test-renderer');
 const Adapter = require("@wojtekmaj/enzyme-adapter-react-17");
 configure({ adapter: new Adapter() });
 
+interface TestAttributes {
+  canBeEmpty?: boolean,
+}
+
 export const componentSanityChecks = (
   label: string,
-  Element: React.ReactElement
+  Element: React.ReactElement,
+  { canBeEmpty }: TestAttributes = { canBeEmpty: false },
 ) => {
   describe(`componentSanityChecks for ${label}`, () => {
     it('is defined', () => {
@@ -19,9 +24,10 @@ export const componentSanityChecks = (
 
     it('render the element', () => {
       const wrapper = shallow(Element);
-      const expected = false;
+      const expected = canBeEmpty;
       const actual = wrapper.isEmptyRender();
-      expect(expected).toEqual(actual);
+
+      expect(actual).toEqual(expected);
     });
     it('matches the snapshot', () => {
       const expected = renderer
@@ -33,8 +39,8 @@ export const componentSanityChecks = (
 }
 
 export const runPropsMatrix = (propsList: Array<Array<any>>, testCallback: Function) => {
-  propsList.map(([labelSubfix, props]) => {
-    testCallback(labelSubfix, props);
+  propsList.map(([labelSubfix, props, testAttributes]) => {
+    testCallback(labelSubfix, props, testAttributes);
   })
 };
 
