@@ -18,24 +18,22 @@ import {
 } from './types';
 
 export const AdditionalSettingsNormal = ({
+  enableCustomBoardSizes,
   mode,
   ranked,
-  forking_game,
+  forkingGame,
   selectedBoardSize,
   gameHeight,
   gameWidth,
   challenge,
-  update_ranked,
-  update_aga_ranked,
-  update_board_size,
-  update_board_width,
-  update_board_height,
+  onChangeRanked,
+  onChangeAgaRanked,
+  onChangeBoardSize,
+  onChangeBoardWidth,
+  onChangeBoardHeight,
   withAgaRanking
 }: AdditionalSettingsNormalProps) => {
-
-  let enable_custom_board_sizes = mode === ChallengeModes.DEMO || !ranked;
-
-  if (forking_game) {
+  if (forkingGame) {
     return null;
   }
 
@@ -44,24 +42,24 @@ export const AdditionalSettingsNormal = ({
         <div>
             <AdditionalSettingsHeaderRanked
               challenge={challenge}
-              update_ranked={update_ranked}
+              onChangeRanked={onChangeRanked}
             />
             {withAgaRanking &&
               <AdditionalSettingsHeaderAgaRanked
                 challenge={challenge}
-                update_aga_ranked={update_aga_ranked}
+                onChangeAgaRanked={onChangeAgaRanked}
               />
             }
         </div>
 
         <AdditionalSettingsBoardSize
-          enableCustomBoardSizes={enable_custom_board_sizes}
+          enableCustomBoardSizes={enableCustomBoardSizes}
           selectedBoardSize={selectedBoardSize}
           gameWidth={gameHeight}
           gameHeight={gameWidth}
-          update_board_size={update_board_size}
-          update_board_width={update_board_width}
-          update_board_height={update_board_height}
+          onChangeBoardSize={onChangeBoardSize}
+          onChangeBoardWidth={onChangeBoardWidth}
+          onChangeBoardHeight={onChangeBoardHeight}
         />
     </div>
   );

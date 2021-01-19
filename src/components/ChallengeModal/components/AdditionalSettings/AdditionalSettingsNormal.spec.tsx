@@ -35,16 +35,16 @@ const getBaseProps = (customProps = {}) => {
       selected_board_size: '19x19'
     },
     selectedBoardSize: '19x19',
-    forking_game: '',
+    forkingGame: '',
     withAgaRanking: false,
     mode: ChallengeModes.OPEN,
+    enableCustomBoardSizes: false,
     ranked: false,
-    update_demo_rules: (ev) => console.log(),
-    update_board_size: (ev) => console.log(),
-    update_board_width: (ev) => console.log(),
-    update_board_height: (ev) => console.log(),
-    update_ranked: (ev) => console.log(),
-    update_aga_ranked: (ev) => console.log(),
+    onChangeBoardSize: (ev) => console.log(),
+    onChangeBoardWidth: (ev) => console.log(),
+    onChangeBoardHeight: (ev) => console.log(),
+    onChangeRanked: (ev) => console.log(),
+    onChangeAgaRanked: (ev) => console.log(),
   };
   return {
     ...baseProps,
@@ -61,7 +61,7 @@ runPropsMatrix([
     [
         'with-forking-game',
         getBaseProps({
-            forking_game: true
+            forkingGame: true
         }),
         { canBeEmpty: true }
     ],
@@ -82,6 +82,7 @@ runPropsMatrix([
         getBaseProps({
             conf: { selected_board_size: "custom" },
             selectedBoardSize: 'custom',
+            enableCustomBoardSizes: true,
         })
     ],
 ],(labelSubfix: string, props, testAttributes) => {

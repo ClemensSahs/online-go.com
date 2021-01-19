@@ -668,18 +668,18 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
     // board size and 'Ranked' checkbox
     additionalSettings = () => {
         let additionalSettingsProps = {
-          challenge: this.state.challenge,
-          conf: this.state.conf,
-          forking_game: this.state.forking_game,
-          mode: this.props.mode,
-          ranked: this.state.challenge.game.ranked,
-          rules: this.state.demo.rules,
-          update_demo_rules: this.update_demo_rules,
-          update_board_size: this.update_board_size,
-          update_board_width: this.update_board_width,
-          update_board_height: this.update_board_height,
-          update_ranked: this.update_ranked,
-          update_aga_ranked: this.update_aga_ranked,
+            challenge: this.state.challenge,
+            conf: this.state.conf,
+            forkingGame: this.state.forking_game,
+            mode: this.props.mode,
+            ranked: this.state.challenge.game.ranked,
+            rules: this.state.demo.rules,
+            onChangeDemoRules: this.update_demo_rules,
+            onChangeBoardSize: this.update_board_size,
+            onChangeBoardWidth: this.update_board_width,
+            onChangeBoardHeight: this.update_board_height,
+            onChangeRanked: this.update_ranked,
+            onChangeAgaRanked: this.update_aga_ranked,
         };
 
         return <AdditionalSettings {...additionalSettingsProps} />;

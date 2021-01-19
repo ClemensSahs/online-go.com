@@ -26,14 +26,14 @@ const getBaseProps = (customProps = {}) => {
     gameWidth: 19,
     gameHeight: 19,
     selectedBoardSize: '19x19',
-    forking_game: '',
+    forkingGame: '',
     mode: ChallengeModes.DEMO,
     enableCustomBoardSizes: false,
     ranked: false,
-    update_demo_rules: (ev) => console.log(),
-    update_board_size: (ev) => console.log(),
-    update_board_width: (ev) => console.log(),
-    update_board_height: (ev) => console.log(),
+    onChangeDemoRules: (ev) => console.log(),
+    onChangeBoardSize: (ev) => console.log(),
+    onChangeBoardWidth: (ev) => console.log(),
+    onChangeBoardHeight: (ev) => console.log(),
     update_ranked: (ev) => console.log(),
     update_aga_ranked: (ev) => console.log(),
   };
@@ -47,13 +47,13 @@ runPropsMatrix([
   [
       'without-folking',
       getBaseProps({
-          forking_game: false,
+          forkingGame: false,
       })
   ],
   [
       'with-folking',
       getBaseProps({
-          forking_game: true,
+          forkingGame: true,
       })
   ],
   [

@@ -11,15 +11,6 @@ import {
 } from '../../types';
 
 jest.mock('data');
-// jest.mock('data', () => ({
-//     get: jest.fn((x: string, defaultValue) => {
-//       console.log('mock '+ x);
-//       if (x === 'config.aga_rankings_enabled') {
-//         return true;
-//       }
-//       return defaultValue;
-//     })
-// }));
 
 jest.mock('translate', () => ({
     _: jest.fn(x => x),
@@ -40,12 +31,12 @@ const getBaseProps = () => {
     mode: ChallengeModes.OPEN,
     ranked: false,
     withAgaRanking: false,
-    update_demo_rules: (ev) => console.log(),
-    update_board_size: (ev) => console.log(),
-    update_board_width: (ev) => console.log(),
-    update_board_height: (ev) => console.log(),
-    update_ranked: (ev) => console.log(),
-    update_aga_ranked: (ev) => console.log(),
+    onChangeDemoRules: (ev) => console.log(),
+    onChangeBoardSize: (ev) => console.log(),
+    onChangeBoardWidth: (ev) => console.log(),
+    onChangeBoardHeight: (ev) => console.log(),
+    onChangeRanked: (ev) => console.log(),
+    onChangeAgaRanked: (ev) => console.log(),
   };
 }
 

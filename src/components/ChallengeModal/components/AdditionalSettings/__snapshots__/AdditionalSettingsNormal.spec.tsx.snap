@@ -78,19 +78,19 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the sn
             label="Extreme Sizes"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="25x25"
             >
               25x25
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="21x21"
             >
               21x21
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x5"
             >
               5x5
@@ -100,13 +100,13 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the sn
             label="Non-Square"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="19x9"
             >
               19x9
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x13"
             >
               5x13
@@ -116,7 +116,7 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the sn
             label="Custom"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="custom"
             >
               Custom Size
@@ -384,19 +384,19 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking mat
             label="Extreme Sizes"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="25x25"
             >
               25x25
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="21x21"
             >
               21x21
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x5"
             >
               5x5
@@ -406,13 +406,13 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking mat
             label="Non-Square"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="19x9"
             >
               19x9
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x13"
             >
               5x13
@@ -422,7 +422,7 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking mat
             label="Custom"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="custom"
             >
               Custom Size
@@ -538,19 +538,19 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
             label="Extreme Sizes"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="25x25"
             >
               25x25
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="21x21"
             >
               21x21
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x5"
             >
               5x5
@@ -560,13 +560,13 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
             label="Non-Square"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="19x9"
             >
               19x9
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x13"
             >
               5x13
@@ -576,7 +576,7 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
             label="Custom"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="custom"
             >
               Custom Size

@@ -5,7 +5,7 @@ import {
 
 export const AdditionalSettingsHeaderRanked = ({
   challenge,
-  update_ranked
+  onChangeRanked
 }) => <div>
     <div className="form-group">
         <label className="control-label" htmlFor="challenge-ranked">{_("Ranked")}</label>
@@ -14,7 +14,7 @@ export const AdditionalSettingsHeaderRanked = ({
                 <input type="checkbox"
                     id="challenge-ranked"
                     disabled={challenge.game.private}
-                    checked={challenge.game.ranked} onChange={update_ranked}/>
+                    checked={challenge.game.ranked} onChange={onChangeRanked}/>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@ export const AdditionalSettingsHeaderRanked = ({
 
 export const AdditionalSettingsHeaderAgaRanked = ({
   challenge,
-  update_aga_ranked
+  onChangeAgaRanked
 }) =>
     <div className="form-group">
         <label className="control-label" htmlFor="challenge-aga-ranked">{_("AGA Ranked")}</label>
@@ -31,7 +31,7 @@ export const AdditionalSettingsHeaderAgaRanked = ({
                 <input type="checkbox"
                     id="challenge-aga-ranked"
                     disabled={challenge.game.private}
-                    checked={challenge.aga_ranked} onChange={update_aga_ranked}/>
+                    checked={challenge.aga_ranked} onChange={onChangeAgaRanked}/>
             </div>
         </div>
     </div>;

@@ -17,9 +17,9 @@ interface AdditionalSettingsBoardSizeProps {
   selectedBoardSize: string,
   board_width: number,
   board_height: number,
-  update_board_size: OnChangeHandlerSelect,
-  update_board_width: OnChangeHandlerInput,
-  update_board_height: OnChangeHandlerInput,
+  onChangeBoardSize: OnChangeHandlerSelect,
+  onChangeBoardWidth: OnChangeHandlerInput,
+  onChangeBoardHeight: OnChangeHandlerInput,
 };
 
 const AdditionalSettingsBoardSize = ({
@@ -27,9 +27,9 @@ const AdditionalSettingsBoardSize = ({
   selectedBoardSize,
   gameWidth,
   gameHeight,
-  update_board_size,
-  update_board_width,
-  update_board_height
+  onChangeBoardSize,
+  onChangeBoardWidth,
+  onChangeBoardHeight
 }) => {
   return (
     <>
@@ -37,7 +37,7 @@ const AdditionalSettingsBoardSize = ({
           <label className="control-label" htmlFor="challenge-board-size">{_("Board Size")}</label>
           <div className="controls">
               <div className="checkbox">
-                  <select id="challenge-board-size" value={selectedBoardSize} onChange={update_board_size} className="challenge-dropdown form-control">
+                  <select id="challenge-board-size" value={selectedBoardSize} onChange={onChangeBoardSize} className="challenge-dropdown form-control">
                       <optgroup label={_("Normal Sizes")}>
                           <option value="19x19">19x19</option>
                           <option value="13x13">13x13</option>
@@ -69,7 +69,7 @@ const AdditionalSettingsBoardSize = ({
                         role="input"
                         type="number"
                         value={gameWidth}
-                        onChange={update_board_width}
+                        onChange={onChangeBoardWidth}
                         id="challenge-goban-width"
                         data-testid="challenge-goban-width"
                         className="form-control"
@@ -80,7 +80,7 @@ const AdditionalSettingsBoardSize = ({
                         role="input"
                         type="number"
                         value={gameHeight}
-                        onChange={update_board_height}
+                        onChange={onChangeBoardHeight}
                         id="challenge-goban-height"
                         data-testid="challenge-goban-height"
                         className="form-control"

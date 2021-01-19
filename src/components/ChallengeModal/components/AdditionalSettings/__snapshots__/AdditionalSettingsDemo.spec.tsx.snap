@@ -105,19 +105,19 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matc
             label="Extreme Sizes"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="25x25"
             >
               25x25
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="21x21"
             >
               21x21
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x5"
             >
               5x5
@@ -127,13 +127,13 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matc
             label="Non-Square"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="19x9"
             >
               19x9
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x13"
             >
               5x13
@@ -143,7 +143,7 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matc
             label="Custom"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="custom"
             >
               Custom Size
@@ -576,19 +576,19 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.without-folking matche
             label="Extreme Sizes"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="25x25"
             >
               25x25
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="21x21"
             >
               21x21
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x5"
             >
               5x5
@@ -598,13 +598,13 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.without-folking matche
             label="Non-Square"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="19x9"
             >
               19x9
             </option>
             <option
-              disabled={false}
+              disabled={true}
               value="5x13"
             >
               5x13
@@ -614,7 +614,7 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.without-folking matche
             label="Custom"
           >
             <option
-              disabled={false}
+              disabled={true}
               value="custom"
             >
               Custom Size
