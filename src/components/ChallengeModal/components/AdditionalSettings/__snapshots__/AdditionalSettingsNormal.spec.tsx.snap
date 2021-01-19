@@ -1,20 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matches the snapshot 1`] = `
+exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the snapshot 1`] = `
 <div
   className="right-pane pane form-horizontal"
-  id="challenge-basic-settings"
+  id="challenge-additional-settings"
   role="form"
 >
+  <div>
+    <div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="control-label"
+          htmlFor="challenge-ranked"
+        >
+          Ranked
+        </label>
+        <div
+          className="controls"
+        >
+          <div
+            className="checkbox"
+          >
+            <input
+              id="challenge-ranked"
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     className="form-group"
-    id="challenge.game.rules-group"
+    id="challenge-board-size-group"
   >
     <label
       className="control-label"
-      htmlFor="rules"
+      htmlFor="challenge-board-size"
     >
-      Rules
+      Board Size
     </label>
     <div
       className="controls"
@@ -24,39 +51,114 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matc
       >
         <select
           className="challenge-dropdown form-control"
+          id="challenge-board-size"
           onChange={[Function]}
+          value="19x19"
         >
-          <option
-            value="aga"
+          <optgroup
+            label="Normal Sizes"
           >
-            AGA
-          </option>
-          <option
-            value="chinese"
+            <option
+              value="19x19"
+            >
+              19x19
+            </option>
+            <option
+              value="13x13"
+            >
+              13x13
+            </option>
+            <option
+              value="9x9"
+            >
+              9x9
+            </option>
+          </optgroup>
+          <optgroup
+            label="Extreme Sizes"
           >
-            Chinese
-          </option>
-          <option
-            value="ing"
+            <option
+              disabled={false}
+              value="25x25"
+            >
+              25x25
+            </option>
+            <option
+              disabled={false}
+              value="21x21"
+            >
+              21x21
+            </option>
+            <option
+              disabled={false}
+              value="5x5"
+            >
+              5x5
+            </option>
+          </optgroup>
+          <optgroup
+            label="Non-Square"
           >
-            Ing SST
-          </option>
-          <option
-            value="japanese"
+            <option
+              disabled={false}
+              value="19x9"
+            >
+              19x9
+            </option>
+            <option
+              disabled={false}
+              value="5x13"
+            >
+              5x13
+            </option>
+          </optgroup>
+          <optgroup
+            label="Custom"
           >
-            Japanese
-          </option>
-          <option
-            value="korean"
-          >
-            Korean
-          </option>
-          <option
-            value="nz"
-          >
-            New Zealand
-          </option>
+            <option
+              disabled={false}
+              value="custom"
+            >
+              Custom Size
+            </option>
+          </optgroup>
         </select>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`componentSanityChecks for AdditionalSettingsNormal.custom board size matches the snapshot 1`] = `
+<div
+  className="right-pane pane form-horizontal"
+  id="challenge-additional-settings"
+  role="form"
+>
+  <div>
+    <div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="control-label"
+          htmlFor="challenge-ranked"
+        >
+          Ranked
+        </label>
+        <div
+          className="controls"
+        >
+          <div
+            className="checkbox"
+          >
+            <input
+              id="challenge-ranked"
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -204,63 +306,36 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size matc
 </div>
 `;
 
-exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size with  matches the snapshot 1`] = `
+exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking matches the snapshot 1`] = `
 <div
   className="right-pane pane form-horizontal"
-  id="challenge-basic-settings"
+  id="challenge-additional-settings"
   role="form"
 >
-  <div
-    className="form-group"
-    id="challenge.game.rules-group"
-  >
-    <label
-      className="control-label"
-      htmlFor="rules"
-    >
-      Rules
-    </label>
-    <div
-      className="controls"
-    >
+  <div>
+    <div>
       <div
-        className="checkbox"
+        className="form-group"
       >
-        <select
-          className="challenge-dropdown form-control"
-          onChange={[Function]}
+        <label
+          className="control-label"
+          htmlFor="challenge-ranked"
         >
-          <option
-            value="aga"
+          Ranked
+        </label>
+        <div
+          className="controls"
+        >
+          <div
+            className="checkbox"
           >
-            AGA
-          </option>
-          <option
-            value="chinese"
-          >
-            Chinese
-          </option>
-          <option
-            value="ing"
-          >
-            Ing SST
-          </option>
-          <option
-            value="japanese"
-          >
-            Japanese
-          </option>
-          <option
-            value="korean"
-          >
-            Korean
-          </option>
-          <option
-            value="nz"
-          >
-            New Zealand
-          </option>
-        </select>
+            <input
+              id="challenge-ranked"
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -284,7 +359,7 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size with
           className="challenge-dropdown form-control"
           id="challenge-board-size"
           onChange={[Function]}
-          value="custom"
+          value="19x19"
         >
           <optgroup
             label="Normal Sizes"
@@ -357,177 +432,64 @@ exports[`componentSanityChecks for AdditionalSettingsDemo.custom board size with
       </div>
     </div>
   </div>
-  <div
-    className="form-group"
-  >
-    <label
-      className="control-label"
-      htmlFor="challenge-board-size-custom"
-    />
-    <div
-      className="controls"
-    >
-      <div
-        className="checkbox"
-      >
-        <input
-          className="form-control"
-          data-testid="challenge-goban-width"
-          id="challenge-goban-width"
-          max="25"
-          min="1"
-          onChange={[Function]}
-          role="input"
-          style={
-            Object {
-              "width": "3em",
-            }
-          }
-          type="number"
-          value={19}
-        />
-        <input
-          className="form-control"
-          data-testid="challenge-goban-height"
-          id="challenge-goban-height"
-          max="25"
-          min="1"
-          onChange={[Function]}
-          role="input"
-          style={
-            Object {
-              "width": "3em",
-            }
-          }
-          type="number"
-          value={19}
-        />
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
-exports[`componentSanityChecks for AdditionalSettingsDemo.with-folking matches the snapshot 1`] = `
+exports[`componentSanityChecks for AdditionalSettingsNormal.with-forking-game matches the snapshot 1`] = `null`;
+
+exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking matches the snapshot 1`] = `
 <div
   className="right-pane pane form-horizontal"
-  id="challenge-basic-settings"
+  id="challenge-additional-settings"
   role="form"
 >
-  <div
-    className="form-group"
-    id="challenge.game.rules-group"
-  >
-    <label
-      className="control-label"
-      htmlFor="rules"
-    >
-      Rules
-    </label>
-    <div
-      className="controls"
-    >
+  <div>
+    <div>
       <div
-        className="checkbox"
+        className="form-group"
       >
-        <select
-          className="challenge-dropdown form-control"
-          onChange={[Function]}
+        <label
+          className="control-label"
+          htmlFor="challenge-ranked"
         >
-          <option
-            value="aga"
+          Ranked
+        </label>
+        <div
+          className="controls"
+        >
+          <div
+            className="checkbox"
           >
-            AGA
-          </option>
-          <option
-            value="chinese"
-          >
-            Chinese
-          </option>
-          <option
-            value="ing"
-          >
-            Ing SST
-          </option>
-          <option
-            value="japanese"
-          >
-            Japanese
-          </option>
-          <option
-            value="korean"
-          >
-            Korean
-          </option>
-          <option
-            value="nz"
-          >
-            New Zealand
-          </option>
-        </select>
+            <input
+              id="challenge-ranked"
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`componentSanityChecks for AdditionalSettingsDemo.without-folking matches the snapshot 1`] = `
-<div
-  className="right-pane pane form-horizontal"
-  id="challenge-basic-settings"
-  role="form"
->
-  <div
-    className="form-group"
-    id="challenge.game.rules-group"
-  >
-    <label
-      className="control-label"
-      htmlFor="rules"
-    >
-      Rules
-    </label>
     <div
-      className="controls"
+      className="form-group"
     >
-      <div
-        className="checkbox"
+      <label
+        className="control-label"
+        htmlFor="challenge-aga-ranked"
       >
-        <select
-          className="challenge-dropdown form-control"
-          onChange={[Function]}
+        AGA Ranked
+      </label>
+      <div
+        className="controls"
+      >
+        <div
+          className="checkbox"
         >
-          <option
-            value="aga"
-          >
-            AGA
-          </option>
-          <option
-            value="chinese"
-          >
-            Chinese
-          </option>
-          <option
-            value="ing"
-          >
-            Ing SST
-          </option>
-          <option
-            value="japanese"
-          >
-            Japanese
-          </option>
-          <option
-            value="korean"
-          >
-            Korean
-          </option>
-          <option
-            value="nz"
-          >
-            New Zealand
-          </option>
-        </select>
+          <input
+            id="challenge-aga-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </div>
       </div>
     </div>
   </div>

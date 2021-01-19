@@ -5,7 +5,7 @@ import {
 
 const AdditionalSettingsHeaderDemo = ({
   rules,
-  update_demo_rules
+  onChangeDemoRules
 }) =>
     <div className="form-group" id="challenge.game.rules-group">
         <label className="control-label" htmlFor="rules">{_("Rules")}</label>
@@ -13,7 +13,7 @@ const AdditionalSettingsHeaderDemo = ({
             <div className="checkbox">
                 <select
                   value={rules}
-                  onChange={update_demo_rules}
+                  onChange={onChangeDemoRules}
                   className="challenge-dropdown form-control"
                 >
                     <option value="aga">{_("AGA")}</option>

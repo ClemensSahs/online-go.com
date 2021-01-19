@@ -16,15 +16,6 @@ import {
 } from '../../types';
 
 jest.mock('data');
-// jest.mock('data', () => ({
-//     get: jest.fn((x: string, defaultValue) => {
-//       console.log('mock '+ x);
-//       if (x === 'config.aga_rankings_enabled') {
-//         return true;
-//       }
-//       return defaultValue;
-//     })
-// }));
 
 jest.mock('translate', () => ({
     _: jest.fn(x => x),
@@ -32,17 +23,12 @@ jest.mock('translate', () => ({
 
 const getBaseProps = (customProps = {}) => {
   const baseProps = {
-    challenge: {
-      game: {
-        width: 19,
-        height: 19
-      }
-    },
-    conf: {
-      selected_board_size: '19x19'
-    },
+    gameWidth: 19,
+    gameHeight: 19,
+    selectedBoardSize: '19x19',
     forking_game: '',
     mode: ChallengeModes.DEMO,
+    enableCustomBoardSizes: false,
     ranked: false,
     update_demo_rules: (ev) => console.log(),
     update_board_size: (ev) => console.log(),
@@ -57,14 +43,34 @@ const getBaseProps = (customProps = {}) => {
   };
 }
 
-
 runPropsMatrix([
-  ['normal', getBaseProps()],
-  ['as demo', getBaseProps({
-    mode: ChallengeModes.DEMO
-  })],
+  [
+      'without-folking',
+      getBaseProps({
+          forking_game: false,
+      })
+  ],
+  [
+      'with-folking',
+      getBaseProps({
+          forking_game: true,
+      })
+  ],
+  [
+      'custom board size',
+      getBaseProps({
+          selectedBoardSize: "custom"
+      })
+  ],
+  [
+      'custom board size with ',
+      getBaseProps({
+          selectedBoardSize: "custom",
+          enableCustomBoardSizes: true,
+      })
+  ],
 ],(labelSubfix: string, props) => {
-  componentSanityChecks(`BasicSettings.${labelSubfix}`, <AdditionalSettingsDemo {...props} />);
+  componentSanityChecks(`AdditionalSettingsDemo.${labelSubfix}`, <AdditionalSettingsDemo {...props} />);
 });
 
 describe('ChallengeModes additional settings demo', () => {
@@ -74,19 +80,4 @@ describe('ChallengeModes additional settings demo', () => {
     mockedProps = getBaseProps()
   });
 
-
-  test('render additional settings as demo', () => {
-    render(<AdditionalSettingsDemo {...mockedProps} />);
-
-    waitFor(() => expect(screen.queryByLabelText('Rules')).toBeTruthy());
-  });
-
-  test('render additional settings with a custom board size', () => {
-    mockedProps.conf.selected_board_size = "custom";
-
-    render(<AdditionalSettingsDemo {...mockedProps} />);
-
-    expect(screen.queryByTestId('challenge-goban-width')).toBeTruthy();
-    expect(screen.queryByTestId('challenge-goban-height')).toBeTruthy();
-  });
 });

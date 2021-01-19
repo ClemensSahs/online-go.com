@@ -7,17 +7,22 @@ import AdditionalSettingsHeaderDemo from './AdditionalSettingsHeaderDemo';
 import AdditionalSettingsBoardSize from './AdditionalSettingsBoardSize';
 
 import {
+  AdditionalSettingsDemoProps,
+} from './types';
+
+import {
   ChallengeModes,
-  AdditionalSettingsDemoProps
 } from '../../types';
 
 
 const AdditionalSettingsDemo = ({
-  challenge,
-  conf,
+  selectedBoardSize,
   forking_game,
+  gameWidth,
+  gameHeight,
   mode,
   ranked,
+
   rules,
   update_demo_rules,
   update_board_size,
@@ -25,18 +30,18 @@ const AdditionalSettingsDemo = ({
   update_board_height,
 }: AdditionalSettingsDemoProps) => {
 
-  let enable_custom_board_sizes = mode === ChallengeModes.DEMO || !ranked;
+  let enableCustomBoardSizes = mode === ChallengeModes.DEMO || !ranked;
 
   return (
     <div id="challenge-basic-settings" className="right-pane pane form-horizontal" role="form">
-      <AdditionalSettingsHeaderDemo rules={rules} update_demo_rules={update_demo_rules} />
+      <AdditionalSettingsHeaderDemo rules={rules} onChangeDemoRules={update_demo_rules} />
 
       {!forking_game &&
         <AdditionalSettingsBoardSize
-          enable_custom_board_sizes={enable_custom_board_sizes}
-          selected_board_size={conf.selected_board_size}
-          board_width={challenge.game.width}
-          board_height={challenge.game.height}
+          enableCustomBoardSizes={enableCustomBoardSizes}
+          selectedBoardSize={selectedBoardSize}
+          gameWidth={gameWidth}
+          gameHeight={gameHeight}
           update_board_size={update_board_size}
           update_board_width={update_board_width}
           update_board_height={update_board_height}

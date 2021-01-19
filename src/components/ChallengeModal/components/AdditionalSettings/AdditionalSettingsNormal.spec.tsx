@@ -7,35 +7,34 @@ import '@testing-library/jest-dom/extend-expect'
 
 import AdditionalSettingsNormal from './AdditionalSettingsNormal';
 import {
+  componentSanityChecks,
+  runPropsMatrix,
+  testCheckBox,
+} from 'testUtility';
+import {
   ChallengeModes
 } from '../../types';
 
 jest.mock('data');
-// jest.mock('data', () => ({
-//     get: jest.fn((x: string, defaultValue) => {
-//       console.log('mock '+ x);
-//       if (x === 'config.aga_rankings_enabled') {
-//         return true;
-//       }
-//       return defaultValue;
-//     })
-// }));
 
 jest.mock('translate', () => ({
     _: jest.fn(x => x),
 }));
 
-const getBaseProps = () => {
-  return {
+const getBaseProps = (customProps = {}) => {
+  const baseProps = {
     challenge: {
       game: {
         width: 19,
         height: 19
       }
     },
+    gameWidth: 19,
+    gameHeight: 19,
     conf: {
       selected_board_size: '19x19'
     },
+    selectedBoardSize: '19x19',
     forking_game: '',
     withAgaRanking: false,
     mode: ChallengeModes.OPEN,
@@ -47,7 +46,51 @@ const getBaseProps = () => {
     update_ranked: (ev) => console.log(),
     update_aga_ranked: (ev) => console.log(),
   };
+  return {
+    ...baseProps,
+    ...customProps
+  };
 }
+
+
+runPropsMatrix([
+    [
+        'basic',
+        getBaseProps({})
+    ],
+    [
+        'with-forking-game',
+        getBaseProps({
+            forking_game: true
+        }),
+        { canBeEmpty: true }
+    ],
+    [
+        'with-aga-ranking',
+        getBaseProps({
+          withAgaRanking: false
+        })
+    ],
+    [
+        'without-aga-ranking',
+        getBaseProps({
+            withAgaRanking: true
+        })
+    ],
+    [
+        'custom board size',
+        getBaseProps({
+            conf: { selected_board_size: "custom" },
+            selectedBoardSize: 'custom',
+        })
+    ],
+],(labelSubfix: string, props, testAttributes) => {
+  componentSanityChecks(
+    `AdditionalSettingsNormal.${labelSubfix}`,
+    <AdditionalSettingsNormal {...props} />,
+    testAttributes
+  );
+});
 
 describe('ChallengeModes additional settings normal', () => {
 
@@ -56,41 +99,7 @@ describe('ChallengeModes additional settings normal', () => {
     mockedProps = getBaseProps()
   });
 
-
-  test('render additional settings', () => {
-
-    render(<AdditionalSettingsNormal {...mockedProps} />);
-
-    expect(screen.queryByLabelText('Ranked')).toBeTruthy();
-    expect(screen.queryByLabelText('AGA Ranked')).toBeNull();
-  });
-
-
-  test('render additional settings with aga ranking', () => {
-    mockedProps.withAgaRanking = true;
-
-    render(<AdditionalSettingsNormal {...mockedProps} />);
-
-    expect(screen.queryByLabelText('Ranked')).toBeTruthy();
-    expect(screen.queryByLabelText('AGA Ranked')).toBeTruthy();
-  });
-
-  test('render additional settings as folking game', () => {
-    mockedProps.forking_game = true;
-
-    render(<AdditionalSettingsNormal {...mockedProps} />);
-
-    expect(screen.queryByLabelText('Ranked')).toBeNull();
-    expect(screen.queryByLabelText('AGA Ranked')).toBeNull();
-    expect(screen.queryByLabelText('Board Size')).toBeNull();
-  });
-
   test('render additional settings with a custom board size', () => {
-    mockedProps.conf.selected_board_size = "custom";
 
-    render(<AdditionalSettingsNormal {...mockedProps} />);
-
-    expect(screen.queryByTestId('challenge-goban-width')).toBeTruthy();
-    expect(screen.queryByTestId('challenge-goban-height')).toBeTruthy();
   });
 });

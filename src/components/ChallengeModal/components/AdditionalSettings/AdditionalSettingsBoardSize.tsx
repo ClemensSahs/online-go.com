@@ -3,11 +3,30 @@ import {
   _
 } from "translate";
 
+// import {
+//
+// } './types';
+import {
+  ChallengeModes,
+  OnChangeHandlerSelect,
+  OnChangeHandlerInput,
+} from '../../types';
+
+interface AdditionalSettingsBoardSizeProps {
+  enableCustomBoardSizes: boolean,
+  selectedBoardSize: string,
+  board_width: number,
+  board_height: number,
+  update_board_size: OnChangeHandlerSelect,
+  update_board_width: OnChangeHandlerInput,
+  update_board_height: OnChangeHandlerInput,
+};
+
 const AdditionalSettingsBoardSize = ({
-  enable_custom_board_sizes,
-  selected_board_size,
-  board_width,
-  board_height,
+  enableCustomBoardSizes,
+  selectedBoardSize,
+  gameWidth,
+  gameHeight,
   update_board_size,
   update_board_width,
   update_board_height
@@ -18,30 +37,30 @@ const AdditionalSettingsBoardSize = ({
           <label className="control-label" htmlFor="challenge-board-size">{_("Board Size")}</label>
           <div className="controls">
               <div className="checkbox">
-                  <select id="challenge-board-size" value={selected_board_size} onChange={update_board_size} className="challenge-dropdown form-control">
+                  <select id="challenge-board-size" value={selectedBoardSize} onChange={update_board_size} className="challenge-dropdown form-control">
                       <optgroup label={_("Normal Sizes")}>
                           <option value="19x19">19x19</option>
                           <option value="13x13">13x13</option>
                           <option value="9x9">9x9</option>
                       </optgroup>
                       <optgroup label={_("Extreme Sizes")}>
-                          <option disabled={!enable_custom_board_sizes} value="25x25">25x25</option>
-                          <option disabled={!enable_custom_board_sizes} value="21x21">21x21</option>
-                          <option disabled={!enable_custom_board_sizes} value="5x5">5x5</option>
+                          <option disabled={!enableCustomBoardSizes} value="25x25">25x25</option>
+                          <option disabled={!enableCustomBoardSizes} value="21x21">21x21</option>
+                          <option disabled={!enableCustomBoardSizes} value="5x5">5x5</option>
                       </optgroup>
                       <optgroup label={_("Non-Square")}>
-                          <option disabled={!enable_custom_board_sizes} value="19x9">19x9</option>
-                          <option disabled={!enable_custom_board_sizes} value="5x13">5x13</option>
+                          <option disabled={!enableCustomBoardSizes} value="19x9">19x9</option>
+                          <option disabled={!enableCustomBoardSizes} value="5x13">5x13</option>
                       </optgroup>
                       <optgroup label={_("Custom")}>
-                          <option disabled={!enable_custom_board_sizes} value="custom">{_("Custom Size")}</option>
+                          <option disabled={!enableCustomBoardSizes} value="custom">{_("Custom Size")}</option>
                       </optgroup>
                   </select>
               </div>
           </div>
       </div>
 
-      {selected_board_size === "custom" &&
+      {selectedBoardSize === "custom" &&
           <div className="form-group">
               <label className="control-label" htmlFor="challenge-board-size-custom"></label>
               <div className="controls">
@@ -49,7 +68,7 @@ const AdditionalSettingsBoardSize = ({
                       <input
                         role="input"
                         type="number"
-                        value={board_width}
+                        value={gameWidth}
                         onChange={update_board_width}
                         id="challenge-goban-width"
                         data-testid="challenge-goban-width"
@@ -60,7 +79,7 @@ const AdditionalSettingsBoardSize = ({
                       <input
                         role="input"
                         type="number"
-                        value={board_height}
+                        value={gameHeight}
                         onChange={update_board_height}
                         id="challenge-goban-height"
                         data-testid="challenge-goban-height"

@@ -15,13 +15,15 @@ import {
 import {
   AdditionalSettingsNormalProps,
   ChallengeModes
-} from '../../types';
+} from './types';
 
 export const AdditionalSettingsNormal = ({
   mode,
-  conf,
   ranked,
   forking_game,
+  selectedBoardSize,
+  gameHeight,
+  gameWidth,
   challenge,
   update_ranked,
   update_aga_ranked,
@@ -53,10 +55,10 @@ export const AdditionalSettingsNormal = ({
         </div>
 
         <AdditionalSettingsBoardSize
-          enable_custom_board_sizes={enable_custom_board_sizes}
-          selected_board_size={conf.selected_board_size}
-          board_width={challenge.game.width}
-          board_height={challenge.game.height}
+          enableCustomBoardSizes={enable_custom_board_sizes}
+          selectedBoardSize={selectedBoardSize}
+          gameWidth={gameHeight}
+          gameHeight={gameWidth}
           update_board_size={update_board_size}
           update_board_width={update_board_width}
           update_board_height={update_board_height}
