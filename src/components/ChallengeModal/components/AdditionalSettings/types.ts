@@ -26,12 +26,12 @@ export interface AdditionalSettingsProps {
 
 export interface AdditionalSettingsNormalProps {
   challenge
-  selectedBoardSize: string
   gameHeight: number
   gameWidth: number
   forking_game: boolean
   mode: ChallengeModes
   ranked: boolean
+  selectedBoardSize: string
   update_demo_rules: OnChangeHandlerSelect
   update_board_size: OnChangeHandlerSelect
   update_board_width: OnChangeHandlerSelect
@@ -42,14 +42,13 @@ export interface AdditionalSettingsNormalProps {
 }
 
 export interface AdditionalSettingsDemoProps {
-  challenge
-  selectedBoardSize: string
   gameWidth: number
   gameHeight: number
   forking_game: boolean
   mode: ChallengeModes
   ranked: boolean
   rules
+  selectedBoardSize: string
   update_demo_rules: OnChangeHandlerSelect
   update_board_size: OnChangeHandlerSelect
   update_board_width: OnChangeHandlerSelect

@@ -16,14 +16,13 @@ import {
 
 
 const AdditionalSettingsDemo = ({
-  selectedBoardSize,
-  forking_game,
   gameWidth,
   gameHeight,
+  forking_game,
   mode,
   ranked,
-
   rules,
+  selectedBoardSize,
   update_demo_rules,
   update_board_size,
   update_board_width,
