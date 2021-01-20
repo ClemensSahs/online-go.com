@@ -21,17 +21,5 @@ export interface BotObject {
 export * from './components/AdditionalSettings/types';
 export * from './components/BasicSettings/types';
 
-// export interface BasicSettingsProps {
-//   gameName: string,
-//   challenge
-//   conf
-//   botId,
-//   botList?,
-//   gameDemoPrivate
-//   gamePrivate
-//   mode: ChallengeModes
-//   update_conf_bot_id: OnChangeHandlerSelect
-//   update_challenge_game_name: OnChangeHandlerSelect
-  // update_private: OnChangeHandlerSelect
-  // update_demo_private: OnChangeHandlerSelect
-// }
+export type ToDoAny = any;
+export type ToDoRemoveForDumpChilds = any;

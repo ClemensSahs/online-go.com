@@ -3,6 +3,7 @@ import {
   OnChangeHandlerInput,
   OnChangeHandlerSelect,
   ChallengeModes,
+  ToDoAny,
 } from '../../types';
 
 export interface BasicSettingsGamePrivateProps {
@@ -12,8 +13,8 @@ export interface BasicSettingsGamePrivateProps {
 };
 
 export interface BasicSettingsGameNameProps {
-  botId?
-  botList?
+  botId?: ToDoAny
+  botList?: ToDoAny
   gameName: string,
   mode: ChallengeModes
   onChangeChallengeGameName: OnChangeHandlerInput
@@ -21,15 +22,8 @@ export interface BasicSettingsGameNameProps {
 }
 
 export interface BasicSettingsProps extends BasicSettingsGameNameProps {
-  //   gameName: string,
-  //   challenge
-  //   conf
-  //   botId,
-  //   botList?,
     gameDemoPrivate: boolean
     gamePrivate: boolean
-  //   update_conf_bot_id: OnChangeHandlerSelect
-  //   update_challenge_game_name: OnChangeHandlerSelect
     onChangePrivate: OnChangeHandlerInput
     onChangeDemoPrivate: OnChangeHandlerInput
 }
