@@ -944,18 +944,18 @@ export function challenge(player_id?: number, initial_state?: any, computer?: bo
         throw Error("Invalid player id");
     }
 
-    let mode: ChallengeModes = "open";
+    let mode = ChallengeModes.OPEN;
     if (player_id) {
-        mode = "player";
+        mode = ChallengeModes.PLAYER;
     }
     if (computer) {
-        mode = "computer";
+        mode = ChallengeModes.COMPUTER;
     }
 
     return openModal(<ChallengeModal playerId={player_id} initialState={initial_state} config={config} mode={mode} />);
 }
 export function createDemoBoard(players_list?:Array<{name:string, rank:number}>, tournament_record_id?:number, tournament_record_round_id?:number) {
-    let mode: ChallengeModes = "demo";
+    let mode = ChallengeModes.DEMO;
     return openModal(<
         ChallengeModal mode={mode}
         playersList={players_list}
@@ -1044,7 +1044,7 @@ export function createBlitz() {
     config.challenge.max_ranking = user.ranking + 3;
     config.challenge.game.width = preferences.get("new-game-board-size");
     config.challenge.game.height = preferences.get("new-game-board-size");
-    return openModal(<ChallengeModal config={config} mode={"open"} autoCreate={true} />);
+    return openModal(<ChallengeModal config={config} mode={ChallengeModes.OPEN} autoCreate={true} />);
 }
 export function createLive() {
     let user = data.get("user");
@@ -1053,7 +1053,7 @@ export function createLive() {
     config.challenge.max_ranking = user.ranking + 3;
     config.challenge.game.width = preferences.get("new-game-board-size");
     config.challenge.game.height = preferences.get("new-game-board-size");
-    return openModal(<ChallengeModal config={config} mode={"open"} autoCreate={true} />);
+    return openModal(<ChallengeModal config={config} mode={ChallengeModes.OPEN} autoCreate={true} />);
 }
 export function createCorrespondence() {
     let user = data.get("user");
@@ -1062,7 +1062,7 @@ export function createCorrespondence() {
     config.challenge.max_ranking = user.ranking + 3;
     config.challenge.game.width = preferences.get("new-game-board-size");
     config.challenge.game.height = preferences.get("new-game-board-size");
-    return openModal(<ChallengeModal config={config} mode={"open"} autoCreate={true} />);
+    return openModal(<ChallengeModal config={config} mode={ChallengeModes.OPEN} autoCreate={true} />);
 }
 
 
