@@ -894,15 +894,37 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
             player_cache.fetch(player_id).then(() => this.setState({player_username_resolved: true})).catch(errorLogger);
         }
 
+        let header=null;
+        let createButton=null;
+
+        switch (mode) {
+          case ChallengeModes.OPEN:
+              header = <span>{_("Custom Game")}</span>;
+              createButton = <button onClick={this.createChallenge} className="primary">{_("Create Challenge")}</button>;
+            break;
+
+          case ChallengeModes.DEMO:
+              header = <span>{_("Demo Board")}</span>;
+              createButton = <button onClick={this.createDemo} className="primary">{_("Create Demo")}</button>;
+            break;
+
+          case ChallengeModes.PLAYER:
+              header = <span className="header-with-icon"><PlayerIcon id={player_id} size={32} />&nbsp; {player_username}</span>;
+              createButton = <button onClick={this.createChallenge} className="primary">{_("Send Challenge")}</button>;
+            break;
+
+          case ChallengeModes.COMPUTER:
+              header = <span>{_("Computer")}</span>;
+              createButton = <button onClick={this.createChallenge} className="primary">{_("CrePlay")}</button>;
+            break;
+          default:
+            break;
+        }
+
         return (
           <div className="Modal ChallengeModal" ref="modal">
               <div className="header">
-                  <h2>
-                      {(mode === "open" || null) && <span>{_("Custom Game")}</span> }
-                      {(mode === "demo" || null) && <span>{_("Demo Board")}</span> }
-                      {(mode === "player" || null) && <span className="header-with-icon"><PlayerIcon id={player_id} size={32} />&nbsp; {player_username}</span> }
-                      {(mode === "computer" || null) && <span>{_("Computer")}</span> }
-                  </h2>
+                  <h2>{header}</h2>
               </div>
               <div className="body">
                 <div className="challenge  form-inline">
@@ -925,10 +947,7 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
               </div>
               <div className="buttons">
                   <button onClick={this.close}>{_("Close")}</button>
-                  {(mode === "demo" || null) && <button onClick={this.createDemo} className="primary">{_("Create Demo")}</button>}
-                  {(mode === "computer" || null) && <button onClick={this.createChallenge} className="primary">{_("Play")}</button>}
-                  {(mode === "player" || null) && <button onClick={this.createChallenge} className="primary">{_("Send Challenge")}</button>}
-                  {(mode === "open" || null) && <button onClick={this.createChallenge} className="primary">{_("Create Challenge")}</button>}
+                  {createButton}
               </div>
           </div>
         );
