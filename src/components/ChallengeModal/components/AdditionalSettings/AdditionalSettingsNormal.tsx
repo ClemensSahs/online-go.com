@@ -6,11 +6,7 @@ import {
 import * as data from "data";
 
 import AdditionalSettingsBoardSize from './AdditionalSettingsBoardSize';
-import {
-  AdditionalSettingsHeaderRanked,
-  AdditionalSettingsHeaderAgaRanked
-} from './AdditionalSettingsHeaderRanked';
-
+import AdditionalSettingsHeaderRanked from './AdditionalSettingsHeaderRanked';
 
 import {
   AdditionalSettingsNormalProps,
@@ -41,13 +37,19 @@ export const AdditionalSettingsNormal = ({
     <div id="challenge-additional-settings" className="right-pane pane form-horizontal" role="form">
         <div>
             <AdditionalSettingsHeaderRanked
-              challenge={challenge}
-              onChangeRanked={onChangeRanked}
+              ranked={challenge.game.ranked}
+              isPrivate={challenge.game.private}
+              label={_("Ranked")}
+              onChange={onChangeRanked}
+              id={'challenge-ranked'}
             />
             {withAgaRanking &&
-              <AdditionalSettingsHeaderAgaRanked
-                challenge={challenge}
-                onChangeAgaRanked={onChangeAgaRanked}
+              <AdditionalSettingsHeaderRanked
+                ranked={challenge.aga_ranked}
+                isPrivate={challenge.game.private}
+                label={_("AGA Ranked")}
+                onChange={onChangeAgaRanked}
+                id={'challenge-aga-ranked'}
               />
             }
         </div>

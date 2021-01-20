@@ -15,7 +15,6 @@ export interface AdditionalSettingsBaseProps {
   gameHeight: number
   forkingGame: boolean
   mode: ChallengeModes
-  ranked: boolean
   selectedBoardSize: string
   onChangeBoardSize: OnChangeHandlerSelect
   onChangeBoardWidth: OnChangeHandlerSelect
@@ -24,7 +23,7 @@ export interface AdditionalSettingsBaseProps {
 
 export interface AdditionalSettingsNormalProps extends AdditionalSettingsBaseProps {
   challenge
-
+  ranked: boolean
   onChangeRanked: OnChangeHandlerSelect
   onChangeAgaRanked: OnChangeHandlerSelect
   withAgaRanking: boolean

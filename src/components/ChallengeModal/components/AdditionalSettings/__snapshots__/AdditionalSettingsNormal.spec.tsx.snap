@@ -7,28 +7,26 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the sn
   role="form"
 >
   <div>
-    <div>
-      <div
-        className="form-group"
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-ranked"
       >
-        <label
-          className="control-label"
-          htmlFor="challenge-ranked"
-        >
-          Ranked
-        </label>
+        Ranked
+      </label>
+      <div
+        className="controls"
+      >
         <div
-          className="controls"
+          className="checkbox"
         >
-          <div
-            className="checkbox"
-          >
-            <input
-              id="challenge-ranked"
-              onChange={[Function]}
-              type="checkbox"
-            />
-          </div>
+          <input
+            id="challenge-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
         </div>
       </div>
     </div>
@@ -136,28 +134,26 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.custom board size ma
   role="form"
 >
   <div>
-    <div>
-      <div
-        className="form-group"
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-ranked"
       >
-        <label
-          className="control-label"
-          htmlFor="challenge-ranked"
-        >
-          Ranked
-        </label>
+        Ranked
+      </label>
+      <div
+        className="controls"
+      >
         <div
-          className="controls"
+          className="checkbox"
         >
-          <div
-            className="checkbox"
-          >
-            <input
-              id="challenge-ranked"
-              onChange={[Function]}
-              type="checkbox"
-            />
-          </div>
+          <input
+            id="challenge-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
         </div>
       </div>
     </div>
@@ -313,28 +309,26 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking mat
   role="form"
 >
   <div>
-    <div>
-      <div
-        className="form-group"
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-ranked"
       >
-        <label
-          className="control-label"
-          htmlFor="challenge-ranked"
-        >
-          Ranked
-        </label>
+        Ranked
+      </label>
+      <div
+        className="controls"
+      >
         <div
-          className="controls"
+          className="checkbox"
         >
-          <div
-            className="checkbox"
-          >
-            <input
-              id="challenge-ranked"
-              onChange={[Function]}
-              type="checkbox"
-            />
-          </div>
+          <input
+            id="challenge-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
         </div>
       </div>
     </div>
@@ -444,28 +438,26 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
   role="form"
 >
   <div>
-    <div>
-      <div
-        className="form-group"
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-ranked"
       >
-        <label
-          className="control-label"
-          htmlFor="challenge-ranked"
-        >
-          Ranked
-        </label>
+        Ranked
+      </label>
+      <div
+        className="controls"
+      >
         <div
-          className="controls"
+          className="checkbox"
         >
-          <div
-            className="checkbox"
-          >
-            <input
-              id="challenge-ranked"
-              onChange={[Function]}
-              type="checkbox"
-            />
-          </div>
+          <input
+            id="challenge-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
         </div>
       </div>
     </div>

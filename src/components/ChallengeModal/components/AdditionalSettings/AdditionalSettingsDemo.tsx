@@ -15,8 +15,6 @@ const AdditionalSettingsDemo = ({
   gameWidth,
   gameHeight,
   forkingGame,
-  mode,
-  ranked,
   rules,
   selectedBoardSize,
   onChangeDemoRules,
