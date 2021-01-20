@@ -23,6 +23,8 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.basic matches the sn
           className="checkbox"
         >
           <input
+            checked={false}
+            disabled={false}
             id="challenge-ranked"
             onChange={[Function]}
             type="checkbox"
@@ -150,6 +152,8 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.custom board size ma
           className="checkbox"
         >
           <input
+            checked={false}
+            disabled={false}
             id="challenge-ranked"
             onChange={[Function]}
             type="checkbox"
@@ -302,6 +306,160 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.custom board size ma
 </div>
 `;
 
+exports[`componentSanityChecks for AdditionalSettingsNormal.disable-ranking-while-private matches the snapshot 1`] = `
+<div
+  className="right-pane pane form-horizontal"
+  id="challenge-additional-settings"
+  role="form"
+>
+  <div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-ranked"
+      >
+        Ranked
+      </label>
+      <div
+        className="controls"
+      >
+        <div
+          className="checkbox"
+        >
+          <input
+            checked={false}
+            disabled={true}
+            id="challenge-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="challenge-aga-ranked"
+      >
+        AGA Ranked
+      </label>
+      <div
+        className="controls"
+      >
+        <div
+          className="checkbox"
+        >
+          <input
+            checked={false}
+            disabled={true}
+            id="challenge-aga-ranked"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group"
+    id="challenge-board-size-group"
+  >
+    <label
+      className="control-label"
+      htmlFor="challenge-board-size"
+    >
+      Board Size
+    </label>
+    <div
+      className="controls"
+    >
+      <div
+        className="checkbox"
+      >
+        <select
+          className="challenge-dropdown form-control"
+          id="challenge-board-size"
+          onChange={[Function]}
+          value="19x19"
+        >
+          <optgroup
+            label="Normal Sizes"
+          >
+            <option
+              value="19x19"
+            >
+              19x19
+            </option>
+            <option
+              value="13x13"
+            >
+              13x13
+            </option>
+            <option
+              value="9x9"
+            >
+              9x9
+            </option>
+          </optgroup>
+          <optgroup
+            label="Extreme Sizes"
+          >
+            <option
+              disabled={true}
+              value="25x25"
+            >
+              25x25
+            </option>
+            <option
+              disabled={true}
+              value="21x21"
+            >
+              21x21
+            </option>
+            <option
+              disabled={true}
+              value="5x5"
+            >
+              5x5
+            </option>
+          </optgroup>
+          <optgroup
+            label="Non-Square"
+          >
+            <option
+              disabled={true}
+              value="19x9"
+            >
+              19x9
+            </option>
+            <option
+              disabled={true}
+              value="5x13"
+            >
+              5x13
+            </option>
+          </optgroup>
+          <optgroup
+            label="Custom"
+          >
+            <option
+              disabled={true}
+              value="custom"
+            >
+              Custom Size
+            </option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking matches the snapshot 1`] = `
 <div
   className="right-pane pane form-horizontal"
@@ -325,6 +483,8 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.with-aga-ranking mat
           className="checkbox"
         >
           <input
+            checked={false}
+            disabled={false}
             id="challenge-ranked"
             onChange={[Function]}
             type="checkbox"
@@ -454,6 +614,8 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
           className="checkbox"
         >
           <input
+            checked={false}
+            disabled={false}
             id="challenge-ranked"
             onChange={[Function]}
             type="checkbox"
@@ -477,6 +639,8 @@ exports[`componentSanityChecks for AdditionalSettingsNormal.without-aga-ranking 
           className="checkbox"
         >
           <input
+            checked={false}
+            disabled={false}
             id="challenge-aga-ranked"
             onChange={[Function]}
             type="checkbox"

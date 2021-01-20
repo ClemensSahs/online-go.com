@@ -8,21 +8,21 @@ export {
   ChallengeModes,
 } from '../../types';
 
-
 export interface AdditionalSettingsBaseProps {
   enableCustomBoardSizes: boolean
+  forkingGame: boolean
   gameWidth: number
   gameHeight: number
-  forkingGame: boolean
   mode: ChallengeModes
   selectedBoardSize: string
+  onChangeBoardHeight: OnChangeHandlerSelect
   onChangeBoardSize: OnChangeHandlerSelect
   onChangeBoardWidth: OnChangeHandlerSelect
-  onChangeBoardHeight: OnChangeHandlerSelect
 }
 
 export interface AdditionalSettingsNormalProps extends AdditionalSettingsBaseProps {
-  challenge
+  agaRanked: boolean
+  isPrivate: boolean
   ranked: boolean
   onChangeRanked: OnChangeHandlerSelect
   onChangeAgaRanked: OnChangeHandlerSelect
@@ -36,6 +36,6 @@ export interface AdditionalSettingsDemoProps extends AdditionalSettingsBaseProps
 
 
 export interface AdditionalSettingsProps extends AdditionalSettingsNormalProps, AdditionalSettingsDemoProps{
-  conf
-  challenge
+  // conf
+  // challenge
 }

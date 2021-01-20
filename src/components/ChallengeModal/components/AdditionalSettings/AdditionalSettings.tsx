@@ -15,9 +15,6 @@ const AdditionalSettings = (props: AdditionalSettingsProps) => {
   let childProps = {
     ...props,
     enableCustomBoardSizes: !props.ranked,
-    selectedBoardSize: props.conf.selected_board_size,
-    gameWidth: props.challenge.game.board_width,
-    gameHeight: props.challenge.game.board_height,
   };
 
   if (props.mode !== ChallengeModes.DEMO) {

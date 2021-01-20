@@ -14,20 +14,20 @@ import {
 } from './types';
 
 export const AdditionalSettingsNormal = ({
+  agaRanked,
   enableCustomBoardSizes,
-  mode,
-  ranked,
   forkingGame,
-  selectedBoardSize,
   gameHeight,
   gameWidth,
-  challenge,
+  isPrivate,
+  ranked,
+  selectedBoardSize,
   onChangeRanked,
   onChangeAgaRanked,
+  onChangeBoardHeight,
   onChangeBoardSize,
   onChangeBoardWidth,
-  onChangeBoardHeight,
-  withAgaRanking
+  withAgaRanking,
 }: AdditionalSettingsNormalProps) => {
   if (forkingGame) {
     return null;
@@ -37,16 +37,16 @@ export const AdditionalSettingsNormal = ({
     <div id="challenge-additional-settings" className="right-pane pane form-horizontal" role="form">
         <div>
             <AdditionalSettingsHeaderRanked
-              ranked={challenge.game.ranked}
-              isPrivate={challenge.game.private}
+              ranked={ranked}
+              isPrivate={isPrivate}
               label={_("Ranked")}
               onChange={onChangeRanked}
               id={'challenge-ranked'}
             />
             {withAgaRanking &&
               <AdditionalSettingsHeaderRanked
-                ranked={challenge.aga_ranked}
-                isPrivate={challenge.game.private}
+                ranked={agaRanked}
+                isPrivate={isPrivate}
                 label={_("AGA Ranked")}
                 onChange={onChangeAgaRanked}
                 id={'challenge-aga-ranked'}

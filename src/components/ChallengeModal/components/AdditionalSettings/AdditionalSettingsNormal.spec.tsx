@@ -40,6 +40,8 @@ const getBaseProps = (customProps = {}) => {
     mode: ChallengeModes.OPEN,
     enableCustomBoardSizes: false,
     ranked: false,
+    agaRanked: false,
+    isPrivate: false,
     onChangeBoardSize: (ev) => console.log(),
     onChangeBoardWidth: (ev) => console.log(),
     onChangeBoardHeight: (ev) => console.log(),
@@ -75,6 +77,13 @@ runPropsMatrix([
         'without-aga-ranking',
         getBaseProps({
             withAgaRanking: true
+        })
+    ],
+    [
+        'disable-ranking-while-private',
+        getBaseProps({
+            withAgaRanking: true,
+            isPrivate: true,
         })
     ],
     [

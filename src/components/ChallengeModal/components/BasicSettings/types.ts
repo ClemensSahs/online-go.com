@@ -12,23 +12,22 @@ export interface BasicSettingsGamePrivateProps {
 };
 
 export interface BasicSettingsGameNameProps {
-  gameName: string,
-  botId
+  botId?
   botList?
+  gameName: string,
   mode: ChallengeModes
   onChangeChallengeGameName: OnChangeHandlerInput
   onChangeConfBotId: OnChangeHandlerSelect
 }
 
-export interface BasicSettingsProps extends BasicSettingsGamePrivateProps, BasicSettingsGameNameProps {
+export interface BasicSettingsProps extends BasicSettingsGameNameProps {
   //   gameName: string,
   //   challenge
   //   conf
   //   botId,
   //   botList?,
-    gameDemoPrivate
-    gamePrivate
-  //   mode: ChallengeModes
+    gameDemoPrivate: boolean
+    gamePrivate: boolean
   //   update_conf_bot_id: OnChangeHandlerSelect
   //   update_challenge_game_name: OnChangeHandlerSelect
     onChangePrivate: OnChangeHandlerInput

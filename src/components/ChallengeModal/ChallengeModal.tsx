@@ -36,10 +36,13 @@ import {openForkModal} from "./ForkModal";
 
 import BasicSettings from "./components/BasicSettings";
 import AdditionalSettings from "./components/AdditionalSettings";
+import {
+  ChallengeModes
+} from "./types";
 
 declare let swal;
 
-type ChallengeModes = "open" | "computer" | "player" | "demo";
+// type ChallengeModes = "open" | "computer" | "player" | "demo";
 
 interface Events {
 }
@@ -632,17 +635,15 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
     // game name and privacy
     basicSettings = () => {
         let basicSettingsProps = {
-          challenge: this.state.challenge,
-          conf: this.state.conf,
-          forking_game: this.state.forking_game,
-          mode: this.props.mode,
-          ranked: this.state.challenge.game.ranked,
-          rules: this.state.demo.rules,
-
-
+          // challenge: this.state.challenge,
+          // conf: this.state.conf,
+          // forking_game: this.state.forking_game,
           gameName: this.state.challenge.game.name,
           gameDemoPrivate:this.state.demo.private,
           gamePrivate: this.state.challenge.game.private,
+          mode: this.props.mode,
+          ranked: this.state.challenge.game.ranked,
+          rules: this.state.demo.rules,
           onChangePrivate: this.update_private,
           onChangeDemoPrivate: this.update_demo_private,
           onChangeChallengeGameName: this.update_challenge_game_name,
@@ -668,11 +669,14 @@ export class ChallengeModal extends Modal<Events, ChallengeModalProperties, any>
     // board size and 'Ranked' checkbox
     additionalSettings = () => {
         let additionalSettingsProps = {
-            challenge: this.state.challenge,
-            conf: this.state.conf,
+            selectedBoardSize: this.state.conf.selected_board_size,
+            gameWidth: this.state.challenge.game.board_width,
+            gameHeight: this.state.challenge.game.board_height,
+            ranked: this.state.challenge.game.ranked,
+            agaRanked: this.state.challenge.aga_ranked,
+            isPrivate: this.state.challenge.game.private,
             forkingGame: this.state.forking_game,
             mode: this.props.mode,
-            ranked: this.state.challenge.game.ranked,
             rules: this.state.demo.rules,
             onChangeDemoRules: this.update_demo_rules,
             onChangeBoardSize: this.update_board_size,
